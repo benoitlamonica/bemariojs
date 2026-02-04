@@ -20,8 +20,8 @@
     "dev": "vite",
     "build": "vite build --mode lib",
     "preview": "vite preview",
-    "lint": "eslint . --ext .ts",
-    "format": "eslint . --ext .ts --fix"
+    "lint": "eslint",
+    "format": "eslint --fix"
   },
   "keywords": [
     "framework",
