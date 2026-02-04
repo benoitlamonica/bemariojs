@@ -1,6 +1,6 @@
 {
   "name": "benmariojs",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "packageManager": "yarn@4.0.0",
   "description": "A mini front-end framework with TypeScript and Tailwind CSS",
   "main": "dist/index.js",

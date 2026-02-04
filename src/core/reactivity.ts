@@ -27,6 +27,17 @@ function marioState<T>(initialValue: T): MarioState<T> {
   return state as MarioState<T>;
 }
 
+function marioComputed<T>(computeFn: () => T): MarioState<T> {
+  const state = marioState<T>(computeFn());
+
+  // Re-compute value when dependencies change
+  onStateChange(() => {
+    state.value = computeFn();
+  });
+
+  return state;
+}
+
 export function onStateChange(callback: () => void) {
   subscribers.add(callback);
   return () => {
@@ -34,5 +45,5 @@ export function onStateChange(callback: () => void) {
   };
 }
 
-export { marioState };
+export { marioState, marioComputed };
 
