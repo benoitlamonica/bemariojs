@@ -1,6 +1,6 @@
 import { Tailwind } from '@/utils/tailwind';
 
-// Need to take all values from all keys of Tailwind
+// Tailwind class type with autocomplete
 type TailwindClasses = Tailwind[keyof Tailwind];
 
 /**
@@ -8,7 +8,7 @@ type TailwindClasses = Tailwind[keyof Tailwind];
  */
 export interface Template {
   as: string;
-  classes?: TailwindClasses[];
+  classes?: TailwindClasses[] | (TailwindClasses | string)[];
   slot?: (Template | (() => Template)) | (Template | (() => Template))[];
   content?: string;
   click?: () => void;
