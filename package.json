@@ -33,6 +33,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@tailwindcss/vite": "^4.1.18",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "autoprefixer": "^10.4.17",
@@ -42,8 +43,5 @@
     "typescript": "^5.3.3",
     "vite": "^5.0.12",
     "vite-plugin-dts": "^4.5.4"
-  },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.1.18"
   }
 }
