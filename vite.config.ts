@@ -1,17 +1,24 @@
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import path from 'path';
 
 export default defineConfig({
   plugins: [
     tailwindcss(),
     dts({
       exclude: ['src/components/**', 'src/**/*.spec.ts'],
+      outDir: 'dist',
+      tsconfigPath: './tsconfig.json',
+      beforeWriteFile: (filePath, content) => ({
+        filePath: filePath.replace(/src\//, ''),
+        content,
+      }),
     }),
   ],
   resolve: {
     alias: {
-      '@': '/src',
+      '@': path.resolve(__dirname, './src'),
     },
   },
   server: {
