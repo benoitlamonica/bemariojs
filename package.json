@@ -1,0 +1,51 @@
+{
+  "name": "bingomariojs",
+  "version": "0.1.0",
+  "packageManager": "yarn@4.0.0",
+  "description": "A mini front-end framework with TypeScript and Tailwind CSS",
+  "main": "dist/index.js",
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/src/index.d.ts"
+    }
+  },
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:lib": "vite build --mode lib",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .ts",
+    "format": "eslint . --ext .ts --fix",
+    "prepublishOnly": "yarn build:lib"
+  },
+  "keywords": [
+    "framework",
+    "typescript",
+    "tailwind",
+    "reactive",
+    "frontend"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^8.56.0",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12",
+    "vite-plugin-dts": "^4.5.4"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.18"
+  }
+}
