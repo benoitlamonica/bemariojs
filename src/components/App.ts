@@ -21,10 +21,6 @@ export function App(): Template {
           content: 'This is a simple card component created using the mario system.',
         }),
         Welcome,
-        mario({
-          as: 'div',
-          innerHTML: 'testing <strong>innerHTML</strong> support.',
-        }),
       ],
     }),
   });
