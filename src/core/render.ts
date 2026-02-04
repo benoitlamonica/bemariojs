@@ -33,7 +33,8 @@ export function render(tmpl: Template): HTMLElement {
 
   // Set content if provided
   if (tmpl.content) {
-    element.textContent = tmpl.content;
+    const textNode = document.createTextNode(tmpl.content);
+    element.appendChild(textNode);
   }
 
   // Call onMount hook if provided

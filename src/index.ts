@@ -1,4 +1,5 @@
 // Core API
+import '@/style/index.css';
 export { marioState, onStateChange } from '@/core/reactivity';
 export type { MarioState } from '@/core/reactivity';
 

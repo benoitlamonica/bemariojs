@@ -5,11 +5,14 @@ const count = marioState(1);
 
 export const Welcome = () => mario({
   as: 'div',
-  classes: ['text-center', 'mt-10'],
-  content: `Welcome to MarioJS! Count: ${count.value}`,
-  click: () => {
-    console.log('Welcome component clicked!');
-    count.value++;
-  },
+  classes: ['text-center'],
+  slot: mario({
+    as: 'button',
+    classes: ['mt-4', 'px-4', 'py-2', 'bg-blue-500', 'text-white', 'rounded-sm'],
+    content: `Increment Count: ${count.value}`,
+    click: () => {
+      count.value += 1;
+    },
+  }),
 });
 

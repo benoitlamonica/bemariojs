@@ -1,5 +1,4 @@
 import { App } from '@/components/App';
-import { mount } from '@/core/render';
-import '@/style/index.css';
+import { mount } from '@/index';
 
 mount(App, '#app');
