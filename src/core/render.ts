@@ -24,6 +24,17 @@ export function render(tmpl: Template): HTMLElement {
     element.addEventListener('click', tmpl.click);
   }
 
+  // Call onMount hook if provided
+  if (tmpl.onMount) {
+    tmpl.onMount(element);
+  }
+
+  // Set innerHTML if provided and skip other content
+  if (tmpl.innerHTML) {
+    element.innerHTML = tmpl.innerHTML;
+    return element;
+  }
+
   if (tmpl.slot?.length) {
     for (const childTemplate of tmpl.slot) {
       const childElement = render(typeof childTemplate === 'function' ? childTemplate() : childTemplate);
@@ -35,11 +46,6 @@ export function render(tmpl: Template): HTMLElement {
   if (tmpl.content) {
     const textNode = document.createTextNode(tmpl.content);
     element.appendChild(textNode);
-  }
-
-  // Call onMount hook if provided
-  if (tmpl.onMount) {
-    tmpl.onMount(element);
   }
 
   return element;

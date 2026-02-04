@@ -11,6 +11,7 @@ export interface Template {
   classes?: TailwindClasses[] | (TailwindClasses | string)[];
   slot?: (Template | (() => Template)) | (Template | (() => Template))[];
   content?: string;
+  innerHTML?: string;
   click?: () => void;
   onMount?: (element: HTMLElement) => void;
 }
@@ -26,6 +27,7 @@ export function mario(config: Template): Template {
     classes: config.classes,
     slot: typeof config.slot === 'function' ? config.slot() : config.slot,
     content: config.content,
+    innerHTML: config.innerHTML,
     click: config.click,
     onMount: config.onMount,
   };
