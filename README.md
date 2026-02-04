@@ -21,7 +21,7 @@ yarn add mariojs
 ## Quick Start
 
 ```typescript
-import { marioState, mario, mount } from 'mariojs';
+import { marioState, mario, mount } from 'benmariojs';
 
 // Create reactive state
 const count = marioState(0);

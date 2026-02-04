@@ -1,6 +1,6 @@
 {
-  "name": "bingomariojs",
-  "version": "0.1.0",
+  "name": "benmariojs",
+  "version": "0.1.1",
   "packageManager": "yarn@4.0.0",
   "description": "A mini front-end framework with TypeScript and Tailwind CSS",
   "main": "dist/index.js",
@@ -18,12 +18,10 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "build:lib": "vite build --mode lib",
+    "build": "vite build --mode lib",
     "preview": "vite preview",
     "lint": "eslint . --ext .ts",
-    "format": "eslint . --ext .ts --fix",
-    "prepublishOnly": "yarn build:lib"
+    "format": "eslint . --ext .ts --fix"
   },
   "keywords": [
     "framework",
