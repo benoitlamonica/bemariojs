@@ -31,10 +31,6 @@ export function render(tmpl: Template): HTMLElement {
 
   // Set innerHTML if provided and skip other content
   if (tmpl.innerHTML) {
-    console.log('====================================');
-    console.log('InnertHTML', tmpl.innerHTML);
-    console.log('Type', tmpl.as);
-    console.log('====================================');
     element.innerHTML = tmpl.innerHTML;
     return element;
   }
