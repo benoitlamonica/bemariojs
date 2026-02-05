@@ -1,8 +1,9 @@
 export type MarioState<T> = { value: T };
+export type MarioComputed<T> = { readonly value: T };
 
 const subscribers = new Set<() => void>();
 
-function marioState<T>(initialValue: T): MarioState<T> {
+function marioState<T>(initialValue?: T): MarioState<T> {
   let internalValue = initialValue;
   const stateSubscribers: Set<(newValue: T) => void> = new Set();
 
@@ -27,7 +28,7 @@ function marioState<T>(initialValue: T): MarioState<T> {
   return state as MarioState<T>;
 }
 
-function marioComputed<T>(computeFn: () => T): MarioState<T> {
+function marioComputed<T>(computeFn: () => T): MarioComputed<T> {
   const state = marioState<T>(computeFn());
 
   // Re-compute value when dependencies change
