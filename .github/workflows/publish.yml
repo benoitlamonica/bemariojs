@@ -31,7 +31,7 @@ jobs:
           corepack prepare yarn@4.0.0 --activate
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
 
       - name: Build
         run: yarn build
@@ -61,7 +61,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add package.json
-          git commit -m "chore: release v${{ steps.bump_version.outputs.new_version }}"
+          git commit -m "chore: release v${{ steps.bump_version.outputs.new_version }} [skip ci]"
           git tag "v${{ steps.bump_version.outputs.new_version }}"
 
       - name: Push changes and tags
