@@ -3,7 +3,7 @@ import axios, { CreateAxiosDefaults, type AxiosInstance } from 'axios';
 
 const api = marioState<AxiosInstance>();
 
-type ApiOptions = {
+export type ApiOptions = {
   method?: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
   headers?: Record<string, string>;
   body?: object;
